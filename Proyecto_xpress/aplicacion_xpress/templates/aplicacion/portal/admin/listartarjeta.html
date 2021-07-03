@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" crossorigin="anonymous"></script>
+	<link  rel="icon"   href="{% static 'imagenes/logo.png' %}" type="image/png" />
+	<link type="text/css" href="{% static 'css/estilos.css' %}" rel="stylesheet" />
+	<link rel="stylesheet" media="all" href="{% static 'css/bg.css' %}"/>
+	<title>Portal Xpress</title>
+
+</head>
+
+
+
+ <body> <img class="background" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg"/>
+ {% block content %}
+     <!--barra superior-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid" >
+              <a class="navbar-brand" style="color:orange" href="#">
+                <img src="{% static 'iconos\icons8_card_exchange_40px.png' %}" alt="" width="40" height="34" class="d-inline-block align-text-top">
+                Portal de Administración</a>
+              
+                
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Inicio</a>
+
+                    </div>
+  
+                
+                <div style="float:right;">
+                    <h style="color:white;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"> 
+                    <img src="{% static 'iconos\icons8_female_user_60px.png' %}">Bienvenid@</h>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <h1 class="display-4" style="text-align:center;margin-bottom:4%;margin-top:2%" > Listado de tarjetas </h1>
+<!-- Tabla-->
+        <div >
+			<table class="table table-hover bg-light">
+			  <thead class="letra-blanca">
+				<tr>
+					<th scope="col">Nombre: </th>
+					<th scope="col">Numero Tarjeta:</th>
+					<th scope="col">Patente:</th>
+
+					<th scope="col">Dirección:</th>
+					<th scope="col">Tipo Cliente:</th>
+					<th scope="col">Sexo:</th>
+					<th scope="col">Tipo documento:</th>
+					<th scope="col">Tipo Vehiculo:</th>
+					<th scope="col">Saldo:</th>
+				</tr>
+			  </thead>
+			  <tbody>
+			   {% for tarjeta in tarjetas %}
+				<tr>
+					<td> {{ tarjeta.pri_nom }} {{ tarjeta.seg_nom }}  {{ tarjeta.pri_ap }} {{ tarjeta.seg_ap }}</td>
+					<td> {{ tarjeta.numero_tarjeta }}</td>
+					<td> {{ tarjeta.patente }}</td>
+					<td> {{ tarjeta.direccion }}</td>
+					<td> {{ tarjeta.get_tipo_cliente_display }}</td>
+					<td> {{ tarjeta.get_sexo_display }} </td>
+					<td> {{ tarjeta.get_tipo_doc_display }}</td>
+					<td> {{ tarjeta.get_tipo_vehiculo_display }}</td>
+					<td> {{ tarjeta.saldo }}</td>
+				</tr>
+				{% endfor %}
+			  </tbody>
+			</table>
+			
+			<div>
+		
+                <!-- Circulos-->
+     <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+	<div>
+              
+              <div>
+                  <div class="circle-container">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-container">
+                    <div class="circle"></div>
+                  </div>
+              </div>
+              
+    </div>
+	
+	<div class="footer-portal"> 
+                <p>Un sitio de  <img src="{% static 'imagenes\logo.png' %}" style="width: 130px;">  
+                <div class="circle-container">
+                  <div class="circle"></div>
+                </div></p>
+				<div class="circle-container">
+                  <div class="circle"></div>
+                </div> 2021 todos los derechos reservados.
+              </div>
+			  
+{% endblock %}	
+</body>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/funciones.js' %}"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" crossorigin="anonymous"></script>
+	<link  rel="icon"   href="{% static 'imagenes/logo.png' %}" type="image/png" />
+	<link type="text/css" href="{% static 'css/estilos.css' %}" rel="stylesheet" />
+	<link rel="stylesheet" media="all" href="{% static 'css/bg.css' %}"/>
+	<title>Portal Xpress</title>
+
+</head>
+
+
+
+ <body> <img class="background" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg"/>
+ {% block content %}
+     <!--barra superior-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid" >
+              <a class="navbar-brand" style="color:orange" href="#">
+                <img src="{% static 'iconos\icons8_card_exchange_40px.png' %}" alt="" width="40" height="34" class="d-inline-block align-text-top">
+                Portal Xpress</a>
+              
+                
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Resumen</a>
+                        <a class="nav-link" href="portal\tarjetas.html">Tarjetas</a>
+                        <a class="nav-link" href="#">Puntos Xpress</a>
+                        <a class="nav-link" href="#">Movimientos</a>
+                        <a class="nav-link" href="#">Configuración</a>
+                        <a class="nav-link" href="/">Cerrar Sesión</a>
+                    </div>
+  
+                
+                <div style="float:right;">
+                    <h style="color:white;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"> 
+                    <img src="{% static 'iconos\icons8_female_user_60px.png' %}">Bienvenid@: Katherine</h>
+                </div>
+            </div>
+        </nav>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Tienes 9167 puntos Xpress acumulados en tu cuenta, revisa los descuentos y canjes disponibles en www.xpresscard.cl</strong> 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+
+        
+<!-- Tabla-->
+        <div class="container-xl opacidad" style="margin-top: 50px;"  >
+            <h class="display-4"> Resumen de cuenta 
+          </h>
+       
+            <table class="table table-dark table-striped borde-redondeado">
+            </br>
+                <thead>
+                </br>
+                  <tr>
+                    <th scope="col">Datos de usuario</th>
+                    <th scope="col"></th>
+                    <th scope="col">Datos de contacto</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Estado Cuenta:</th>
+                    <td>Activa</td>
+                    <th>Nombre Contacto:</th>
+                    <td>Katherine Abarca</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Razón Social:</th>
+                    <td>Katherine Abarca</td>
+                    <th>Correo Electrónico:</th>
+                    <td>Kabarca@prueba.cl</td>
+                  </tr>
+                  <div class="circle-container">
+                    <div class="circle"></div>
+                  </div>
+                  <tr>
+                    <th scope="row">RUT:</th>
+                    <td>11.111.111-1</td>
+                    <th>Teléfono contacto:</th>
+                    <td>111222333</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Giro Comercial:</th>
+                    <td>Natural</td>
+                    <th>Ejecutivo Asignado:</th>
+                    <td>Matias Velasquez</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Número de cuenta Factura:</th>
+                    <td>3152415</td>
+                    <th>Dirección Contacto:</th>
+                    <td>Las acacias #1524</td>
+                  </tr>
+                  
+                  <tr>
+                    <th scope="row">Dirección comercial de facturación:</th>
+                    <td>Las acacias #1524</td>
+                    <th>Tipo de cliente:</th>
+                    <td>Natural</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Saldo disponible: </th>
+                    <td>$965.000* </td>
+                    <th> <select class="form-control" id="cmb_divisa">
+                      <option>USD</option>
+                      <option>EUR</option>
+                    </select>  </th>
+                    <td> 
+                      <button type="button" class="btn btn-three btn-warning mr-sm-2" data-target="#">Convertir a otra divisa</button> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Línea de crédito:</th>
+                    <td>$0*</td>
+                    <th>  <select class="form-control" id="cmb_divisa">
+                      <option>USD</option>
+                      <option>EUR</option>
+                    </select> </th>
+                    <td><button type="button" class="btn btn-three btn-warning mr-sm-2" data-target="#">Convertir a otra divisa</button> 
+                      <div class="circle-container">
+                        <div class="circle"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+                <!-- Circulos-->
+     <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+
+              </table>
+              <div style="text-align: center;">
+                <button type="button" class="btn btn-two btn-warning mr-sm-2 letra-negra" data-toggle="modal" data-target="#">Modificar información personal</button>
+
+              </div>
+              
+              <div>
+                  <p> *El saldo es referencial, podría tener un desfase</p> 
+                  <div class="circle-container">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-container">
+                    <div class="circle"></div>
+                  </div>
+              </div>
+              <div style="display: inline;float:right"> 
+                <p>Un sitio de  <img src="{% static 'imagenes\logo.png' %}" style="width: 130px;">  <div class="circle-container">
+                  <div class="circle"></div>
+                </div> 2021 todos los derechos reservados.
+                <div class="circle-container">
+                  <div class="circle"></div>
+                </div></p>
+              </div>
+        </div>
+{% endblock %}	
+</body>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/funciones.js' %}"></script>
+
+</html>

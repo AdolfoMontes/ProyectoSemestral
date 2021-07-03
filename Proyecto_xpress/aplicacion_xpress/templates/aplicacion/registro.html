@@ -1,0 +1,345 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap core JS-->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"> </script>
+	<title>Productos - Tarjeta Xpress</title>
+	<!--Icono-->
+	<link  rel="icon"   href="{% static 'imagenes/logo.png' %}" type="image/png" />
+	<link type="text/css" href="{% static 'css/estilos.css' %}" rel="stylesheet" />
+	<link rel="stylesheet" media="all" href="{% static 'css/bg.css' %}"/>
+</head>
+
+<body> <img class="background"  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg"/>
+{% block content %}
+	<div class="d-flex " id="wrapper">
+		<!-- Sidebar-->
+		<div class="bg-dark margen" id="sidebar-wrapper">
+			<div class="list-group list-group-flush box-2 ">
+				<a class="list-group-item list-group-item-action bg-dark btn-two fuente-blanca" href="index.html"> <img
+						src="{% static 'iconos\icons8_home_24px.png' %}"> Inicio</a>
+				<a class="list-group-item list-group-item-action bg-dark btn-two fuente-blanca" href="productos.html">
+					<img src="{% static 'iconos\icons8_product_24px.png' %}">Productos</a>
+				<a class="list-group-item list-group-item-action bg-dark btn-two fuente-blanca" href="sucursales.html">
+					<img src="{% static 'iconos\icons8_online_store_24px.png' %}"> Sucursales</a>
+				<a class="list-group-item list-group-item-action bg-dark btn-two fuente-blanca" href="comparador.html">
+					<img src="{% static 'iconos\icons8_sale_price_tag_24px.png' %}"> Compara precios</a>
+				<a class="list-group-item list-group-item-action bg-dark btn-two fuente-blanca" href="seguros.html">
+					<img src="{% static 'iconos\icons8_vehicle_insurance_24px_1.png' %}"> Seguros</a>
+				<a class="list-group-item list-group-item-action bg-dark btn-two fuente-blanca" href="ayuda.html"> <img
+						src="{% static 'iconos\icons8_help_24px_1.png' %}" >Centro de Ayuda</a>
+				<a class="list-group-item list-group-item-action bg-dark btn-two fuente-blanca" href="contacto.html">
+					<img src="{% static 'iconos\icons8_contact_24px.png' %}">Contacto</a>
+			</div>
+		</div>
+
+
+
+
+     <!-- Circulos-->
+     <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-container">
+      <div class="circle"></div>
+    </div>
+
+		<!-- barra superior-->
+		<div id="page-content-wrapper">
+			<nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom fixed-top">
+				<img src="{% static 'imagenes\logo.png' %}" style="margin-right: 20px;" width="130px">
+				<button class="btn btn-three fuente-blanca" id="menu-toggle">Ocultar/Mostrar menú</button>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+						<li class="nav-item active box-3">
+							<a href="registro.html"> <button type="button" class="btn btn-three btn-lg"
+									style="color: orange;"> Registrarse </button> </a>
+							<button type="button" class="mr-sm-2 btn btn-three fuente-blanca" data-toggle="modal"
+								data-target="#modal_login">Login</button>
+					</ul>
+				</div>
+			</nav>
+
+        <section id="body" style="padding: 100px;"> 
+			<!-- informacion pagina-->
+			<div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    
+                          <div >
+                            <h5 class="display-4"> <img src= "{% static 'iconos\icons8_add_user_male_100px.png' %}">Registro de usuario</h5>
+                            <p> El registro de usuario no es el proceso de contratación del producto. Si no es cliente actual, una vez registrado se permitirá el acceso de manera limitada al Portal, donde se podrá solicitar la tarjeta y ver el estado del pedido.</p>
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Nombres/Razón social</label>
+                                    <input type="text" class="form-control" id="txt_nombre" >
+    
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleFormControlInput1">Apellidos</label>
+                                    <input type="text" class="form-control" id="txt_apellido" >
+                                  </div>
+                                <div class="form-group">
+                                  <label for="exampleFormControlInput2">Dirección de Correo Electrónico</label>
+                                  <input type="text" class="form-control" placeholder="nombre@ejemplo.com" id="txt_mail">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput2">Dirección</label>
+                                    <input type="text" class="form-control" id="txt_direccion" placeholder="Calle, número">
+                                  </div>
+                                  <div class="form-group">
+                                    <label >Comuna</label>
+                                    <select id="cmb_comuna" class="form-control">
+                                      <option selected>Elegir...</option>
+                                      <option>Santiago</option>
+                                      <option>Las Condes</option>
+                                      <option>La Reina</option>
+                                      <option>Vitacura</option>
+                                      <option>La Dehesa</option>
+                                      <option>Lo Barnechea</option>
+                                      <option>Providencia</option>
+                                      <option>Ñuñoa</option>
+                                      <option>La Reina</option>
+                                      <option>Peñalolen</option>
+                                      <option>Macul</option>
+                                      <option>Quilicura</option>
+                                      <option>Huechuraba</option>
+                                      <option>Pudahuel</option>
+                                      <option>Quinta Normal</option>
+                                      <option>Cerro Navia</option>
+                                      <option>Lo Prado</option>
+                                      <option>Renca</option>
+                                      <option>Conchali</option>
+                                      <option>Recoleta</option>
+                                      <option>Independencia</option>
+                                      <option>Estacion Central</option>
+                                      <option>Maipu</option>
+                                      <option>San Miguel</option>
+                                      <option>San Joaquin</option>
+                                      <option>La Cisterna</option>
+                                      <option>Lo Espejo</option>
+                                      <option>Cerrillos</option>
+                                      <option>Pedro Aguirre Cerda</option>
+                                      <option>El Bosque</option>
+                                      <option>La Pintana</option>
+                                      <option>La Granja</option>
+                                      <option>San Ramon</option>	
+                                      <option>Puente Alto</option>
+                                      <option>La Florida</option>
+                                      <option>San Bernardo</option>
+                                      <option>Padre Hurtado</option>
+                                    </select>
+                                  </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput3">Teléfono</label>
+                                        <input type="text" class="form-control" id="txt_telefono" placeholder="+56912345678">
+                                      </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput4">RUT</label>
+                                        <input type="text" class="form-control" id="txt_rut" placeholder="11.111.111-1">
+                                    </div>
+                                <form>
+                                        <div class="form-group">
+                                          <label for="exampleFormControlFile1">Documento de identificación</label>
+                                          <input type="file" class="form-control-file" id="cargar_doc">
+                                        </div>
+                                        <p> Si es cliente natural, adjuntar copia de carnet de identidad, si es empresa, el rol tributario.</p>
+                                      </form>
+                                <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput4">Contraseña</label>
+                                            <input type="password" class="form-control" id="txt_pass1" placeholder="">
+                                            <p>La contraseña debe contener al menos 1 mayúscula y 1 numero, no puede exceder los 15 caracteres</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput4">Repita contraseña</label>
+                                            <input type="password" class="form-control" id="txt_pass2" placeholder="Repita contraseña">
+                                            <p></p>
+                                    </div>
+                                <div class="form-group">
+                                  <label for="exampleFormControlSelect1">Tipo de cliente</label>
+                                  <select class="form-control" id="motivo">
+                                    <option>Natural</option>
+                                    <option>Empresa</option>
+                                    <option>Taxi</option>
+                                  </select>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chk_terminos" required>
+                                    <label class="form-check-label" for="invalidCheck">
+                                      <a href src="" > Acepto los términos y condiciones</a>
+                                    </label>
+                                </div>
+                                <strong>
+                                  <ul id="errores" style="color: red;">
+    
+                                  </ul>
+                                </strong>
+                                <button type="button" class="btn btn-three btn-block btn-lg fuente-blanca" style="margin-top:10px" id="btn_registro">Registrarme</button>
+                                
+                              </form>	
+                          </div>
+                          <br />
+                  </div>
+            
+            
+            <div>
+            </section>
+
+        
+
+
+						<!--FIN INFORMACION-->
+  <!-- Footer -->
+  <section id="footer">
+	<div class="container">
+	  <div class="row text-center text-xs-center text-sm-left text-md-left">
+		<div class="col-xs-12 col-sm-4 col-md-4">
+		  <h5>Ayuda</h5>
+		  <ul class="list-unstyled quick-links">
+			<li><a href="ayuda.html"><i class="fa fa-angle-double-right"></i>Centro de ayuda</a> </li>
+			<li><a href="contacto.html"><i class="fa fa-angle-double-right"></i>Formulario de contacto</a></li>
+			<li><a href="registro.html"><i class="fa fa-angle-double-right"></i>Registro</a></li>
+			
+		  </ul>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4">
+		  <h5>Acerca de</h5>
+		  <ul class="list-unstyled quick-links">
+			<li><a href="acerca.html"><i class="fa fa-angle-double-right"></i>Nosotros</a>
+			</li>
+			<li><a href="productos.html"><i
+				  class="fa fa-angle-double-right"></i>Nuestros productos</a></li>
+			
+			
+		  </ul>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4">
+		  <h5>Accesos rápidos</h5>
+		  <ul class="list-unstyled quick-links">
+			<li><a href="\"><i class="fa fa-angle-double-right"></i>Inicio</a> </li>
+			<li><a href="productos.html"><i class="fa fa-angle-double-right"></i>Productos</a></li>
+			<li><a href="sucursales.html"><i class="fa fa-angle-double-right"></i>Sucursales </a>  </li>
+			<li><a href="comparador.html"><i class="fa fa-angle-double-right"></i>Comparador de Precios</a></li>
+			<li><a href="seguros.html"><i class="fa fa-angle-double-right"></i>Seguros</a></li>
+		  </ul>
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+		  <ul class="list-unstyled list-inline social text-center">
+			<li class="list-inline-item"><a href="https://www.facebook.com"><input type="image" src="{% static 'iconos/icons8_facebook_circled_48px.png' %}"></a></li>
+			<li class="list-inline-item"><a href="https://www.twitter.com"><input type="image" src="{% static 'iconos/icons8_twitter_circled_48px.png' %}" ></a></li>
+			<li class="list-inline-item"><a href="https://www.youtube.com"><input type="image" src="{% static 'iconos/icons8_play_button_48px.png' %}"></a></li>
+			<li class="list-inline-item"><a href="https://www.instagram.com"><input type="image" src="{% static 'iconos/icons8_instagram_48px.png' %}"></a></li>
+			
+		  </ul>
+		</div>
+		<hr>
+	  </div>
+	  <div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+		  <p><u><a href="https://www.carview.cl/">Carview y tarjeta Xpress</a></u> 
+			Sitio desarrollado por alumnos de DUOC UC a modo de prueba, todo lo
+				  mostrado en la misma es ficción y las marcas utilizadas no tienen ninguna relación.</p>
+		  <p class="h6">© Carview. Todos los derechos reservados.<a class="text-green ml-2" href="https://www.carview.cl"> </a></p>
+		</div>
+		<hr>
+	  </div>
+	</div>
+  </section>
+  <!-- ./Footer -->
+
+
+
+
+
+
+					<!-- Modal login -->
+                    <div class="modal fade opacidad" id="modal_login" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                      <div class="modal-content ">
+                        <div class="modal-header bg-dark ">
+                          <h4 class="modal-title"  text-decoration="underline:none">Inicio de sesión</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body bg-dark">
+                          <form>
+                            <div class="form-group">
+                              <label class="letra-negra">Usuario</label>
+                              <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                              <label class="letra-negra">Contraseña</label>
+                              <input type="password" class="form-control" id="recipient-pass">
+                            </div>
+                            
+                          </form>
+                          
+                        <div>
+                          <a href="portal.html" style="text-decoration:none!important;">
+                            <button type="button" class="btn btn-block btn-three btn-lg " style="background-color: orange; color:white;"> Ingresar </button> </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+
+
+{% endblock %}					
+</body>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/funciones.js' %}"></script>
+</html>
