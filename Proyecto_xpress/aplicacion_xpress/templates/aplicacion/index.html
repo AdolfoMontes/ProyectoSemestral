@@ -39,7 +39,7 @@
             src= "{% static 'iconos\icons8_help_24px_1.png' %}">Centro de Ayuda</a>
         <a class="list-group-item list-group-item-action bg-dark btn-two fuente-blanca" href="contacto.html"> <img
             src= "{% static 'iconos\icons8_contact_24px.png' %}">Contacto</a>
-		<form class="form" action='portal/admin/listartarjeta.html' method='GET' >
+		<form class="form" action='portalGestion' method='GET' >
 				<button type="submit" id="login-button2" class="btn-three btn"> <img src="{% static 'iconos\admin.png' %}" width="80px"/>Portal de gestión </button>
 			</form>
 		
@@ -123,15 +123,16 @@
                     <img src="https://www.angolinos.cl/wp-content/uploads/2017/04/Estaci%C3%B3n-de-servicio-Copec.jpg"
                       class="d-block w-100 " alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                      <br />
+
                       <h5 class="display-4">Conoce Tarjeta Xpress </h5>
 
                       <p class="p-index ">Xpress es una tarjeta prepago o crédito, que puede ser usada en la mayoría de
                         estaciones de servicio de Chile. Toma el control de tu vehiculo o flota.
-                      </p>
-                      <button type="button" class=" btn-two btn-lg font-weight-bold"
+						<button type="button" class=" btn-two btn-lg font-weight-bold"
                         style="background-color:orange !important;" data-toggle="modal"
                         data-target="#modal_contratar">Comienza con los beneficios</button>
+                      </p>
+                      
 
                     </div>
                   </div>
@@ -145,9 +146,9 @@
 
                       <p class="p-index">Canjea cargas o gana descuentos especiales en tus compras solo con utilizar tu
                         tarjeta.
-
-                        <button type="button" class="btn-two btn-lg font-weight-bold" style="background-color:orange;"
+						 <button type="button" class="btn-two btn-lg font-weight-bold" style="background-color:orange;"
                           data-toggle="modal" data-target="#modal_contratar">Comienza con los beneficios</button>
+                       
                       </p>
                     </div>
                   </div>
@@ -158,12 +159,15 @@
                     <div class="carousel-caption d-none d-md-block">
                       <br />
                       <h5 class="display-4">Contrata tu seguro de daños y accidentes</h5>
+					   
                       <p class="p-index"> 100% online y con cargo a tu tarjeta. Disfruta tu auto y maneja tranquilo con
-                        cobertura completa.</p>
-                      <a href="seguros.html">
-                        <button type="button" class="btn-two btn-lg font-weight-bold" style="background-color:orange;"
-                          data-toggle="modal" data-target="#modal_contratar">Ir a seguros</button>
-                      </a>
+                        cobertura completa.
+						<a href="seguros.html">
+                        <button type="button" class="btn-two btn-lg font-weight-bold" href="seguros.html" style="background-color:orange;"
+                          data-toggle="modal" >Ir a seguros</button>
+					</a>
+					  </p>
+                      
                     </div>
                   </div>
                 </div>

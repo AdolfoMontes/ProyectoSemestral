@@ -13,7 +13,7 @@
 	<link type="text/css" href="{% static 'css/estilos.css' %}" rel="stylesheet" />
 	<link rel="stylesheet" media="all" href="{% static 'css/bg.css' %}"/>
 	<link rel="stylesheet" media="all" href="{% static 'css/formulario.css' %}"/>
-	<title>Portal de Gestión</title>
+	<title>Modificar tarjeta</title>
 
 </head>
 
@@ -26,12 +26,12 @@
             <div class="container-fluid" >
               <a class="navbar-brand" style="color:orange" href="#">
                 <img src="{% static 'iconos\icons8_card_exchange_40px.png' %}" alt="" width="40" height="34" class="d-inline-block align-text-top">
-                Crear tarjeta</a>
+                Portal de Administración</a>
               
                 
                     <div class="navbar-nav">
                         <a class="nav-link" href="/">Inicio</a>
-                        <a class="nav-link" href="portalGestion">Atrás</a>
+                        <a class="nav-link" href="javascript:history.back()">Atrás</a>
                     </div>
   
                 
@@ -41,66 +41,56 @@
                 </div>
             </div>
         </nav>
-			<form class="form float-left" style="position:relative" action='portalGestion' method='GET' >
+			<form class="form float-left" style="position:absolute" action="javascript:history.back()" method='GET' >
 				<button type="submit" id="login-button2" class="btn-three btn"> <img src="{% static 'iconos\back.png' %}" width="80px"/> </button>
 		</form>
 
-		<h1 class="display-4" style="text-align:center;margin-bottom:4%;margin-top:2%;margin-right:15%" > Crear tarjeta </h1>
 
-<!--Mensaje de error o éxito-->
-		<div style="text-align:center">
-		{% if messages %}
-		<h3 class=" messages" >
-			{% for message in messages %}
-			<h3{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h3>
-			{% endfor %}
-		</h3>
-		</div>
-		{% endif %}
+        <h1 class="display-4" style="text-align:center;margin-bottom:4%;margin-top:2%" > Modificar tarjeta </h1>
 <!-- Contenido-->
-	<div class="text-center">
-		<form method="POST" >
+        <div class="text-center">
 		
-				{% csrf_token %}
-				
+			<form method="POST">
 				<ul style="list-style-type: none">
-					
-					<li>RUT: {{ formulario.rut }}</li>
-					<li>Primer Nombre: {{ formulario.pri_nom}}</li>
-					<li>Segundo Nombre: {{ formulario.seg_nom }}</li>
-					<li>Apellido Paterno: {{ formulario.pri_ap }}</li>
-					<li>Apellido Materno: {{ formulario.seg_ap }}</li>
-					<li>Dirección: {{ formulario.direccion }}</li>
+					{% csrf_token %}
+					<li>RUT: {{ modificarTarjeta.rut }}</li>
+					<li>Primer Nombre: {{ modificarTarjeta.pri_nom}}</li>
+					<li>Segundo Nombre: {{ modificarTarjeta.seg_nom }}</li>
+					<li>Apellido Paterno: {{ modificarTarjeta.pri_ap }}</li>
+					<li>Apellido Materno: {{ modificarTarjeta.seg_ap }}</li>
+					<li>Dirección: {{ modificarTarjeta.direccion }}</li>
 					<label for="cb-usuario"> Tipo cliente: </label>
 					<div class="select">
-						<select id="cb-usuario" class="bg-dark btn-three btn-lg" style="width:250px" {{ formulario.tipo_cliente }} </select>
+						<select id="cb-usuario" class="bg-dark btn-three btn-lg" style="width:250px" {{ modificarTarjeta.tipo_cliente }} </select>
 					</div>
 					<label for="cb-sexo"> Sexo: </label>
 					<div class="select">
-						<select id="cb-sexo" class="bg-dark btn-three btn-lg" style="width:250px" {{ formulario.sexo }} </select>
+						<select id="cb-sexo" class="bg-dark btn-three btn-lg" style="width:250px" {{ modificarTarjeta.sexo }} </select>
 					</div>
-					<li>Número de tarjeta: {{ formulario.numero_tarjeta }}</li>
+					<li>Número de tarjeta: {{ modificarTarjeta.numero_tarjeta }}</li>
 					<label for="cb-tipotar"> Tipo tarjeta: </label>
 					<div class="select">
-						<select id="cb-tipotar" class="bg-dark btn-three btn-lg" style="width:250px" {{ formulario.tipo_tarjeta }} </select>
+						<select id="cb-tipotar" class="bg-dark btn-three btn-lg" style="width:250px" {{ modificarTarjeta.tipo_tarjeta }} </select>
 					</div>
 					<label for="cb-tipodoc"> Tipo documento: </label>
 					<div class="select">
-						<select id="cb-tipodoc" class="bg-dark btn-three btn-lg" style="width:250px" {{ formulario.tipo_doc }} </select>
+						<select id="cb-tipodoc" class="bg-dark btn-three btn-lg" style="width:250px" {{ modificarTarjeta.tipo_doc }} </select>
 					</div>
-					<li>Saldo: {{ formulario.saldo }}</li>
-					<li>Patente: {{ formulario.patente }}</li>
+					<li>Saldo: {{ modificarTarjeta.saldo }}</li>
+					<li>Patente: {{ modificarTarjeta.patente }}</li>
 					<label for="cb-tipoveh"> Tipo vehículo: </label>
 					<div class="select">
-						<select id="cb-tipoveh" class="bg-dark btn-three btn-lg" style="width:250px" {{ formulario.tipo_vehiculo }} </select>
+						<select id="cb-tipoveh" class="bg-dark btn-three btn-lg" style="width:250px" {{ modificarTarjeta.tipo_vehiculo }} </select>
 					</div>
-					
-
-				<button type="submit" class="btn-three btn-success btn-lg" style="margin-top:20px" onclick="return confirm('Estás seguro de guardar?')"> <img src="{% static 'iconos/save.png' %}" width="50px"/> Almacenar </button>
+				
+				<button type="submit" class="btn-three btn-success btn-lg" style="margin-top:20px" onclick="return confirm('Estás seguro de guardar?')"> <img src="{% static 'iconos/save.png' %}" width="50px"/> Modificar </button>
+			
 			</form>
-	
-	</div>
-		
+			
+			
+
+			
+		<div>
 		
                 <!-- Circulos-->
      <div class="circle-container">
@@ -161,6 +151,7 @@
               
     </div>
 	
+			  
 {% endblock %}	
 </body>
     <!-- Core theme JS-->
@@ -171,4 +162,23 @@
 
 
 
-				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

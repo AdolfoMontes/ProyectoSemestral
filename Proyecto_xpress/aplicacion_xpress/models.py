@@ -6,7 +6,7 @@ from .choices import tipo_cliente, sexo, tipo_tarjeta, tipo_doc, tipo_vehiculo
 
 
 class Tarjeta(models.Model):
-    cod_cliente =  models.CharField(max_length=17, default='0', null=False, blank=False, unique=True, verbose_name='Código cliente')
+    rut =  models.CharField(max_length=17, null=False, blank=False, unique=True, verbose_name='RUT')
     pri_nom = models.CharField(max_length=30, null=False, blank=False,verbose_name='Primer Nombre')
     seg_nom = models.CharField(max_length=30, verbose_name='Segundo Nombre')
     pri_ap = models.CharField(max_length=30, null=False, blank=False, verbose_name='Apelldo Paterno')

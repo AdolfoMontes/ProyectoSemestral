@@ -12,7 +12,7 @@
 	<link  rel="icon"   href="{% static 'imagenes/logo.png' %}" type="image/png" />
 	<link type="text/css" href="{% static 'css/estilos.css' %}" rel="stylesheet" />
 	<link rel="stylesheet" media="all" href="{% static 'css/bg.css' %}"/>
-	<title>Portal Xpress</title>
+	<title>Portal de Gestión</title>
 
 </head>
 
@@ -25,12 +25,12 @@
             <div class="container-fluid" >
               <a class="navbar-brand" style="color:orange" href="#">
                 <img src="{% static 'iconos\icons8_card_exchange_40px.png' %}" alt="" width="40" height="34" class="d-inline-block align-text-top">
-                Portal de Administración</a>
+                Listado de tarjetas</a>
               
                 
                     <div class="navbar-nav">
                         <a class="nav-link" href="/">Inicio</a>
-
+                        <a class="nav-link" href="javascript:history.back()">Atrás</a>
                     </div>
   
                 
@@ -40,15 +40,28 @@
                 </div>
             </div>
         </nav>
+			<form class="form float-left" style="position:relative" action="javascript:history.back()" method='GET' >
+				<button type="submit" id="" class="btn-three btn"> <img src="{% static 'iconos\back.png' %}"/> </button>
+		</form>
 
 
-
-        <h1 class="display-4" style="text-align:center;margin-bottom:4%;margin-top:2%" > Listado de tarjetas </h1>
-<!-- Tabla-->
+        <h1 class="display-4" style="text-align:center;margin-bottom:4%;margin-top:2%;margin-right:15%" > Listado de tarjetas </h1>
+<!-- Contenido-->
+		<div class="text-center">
+			<form action="buscador" method="GET">
+			{% csrf_token %}
+				<input name="q" placeholder="Escribe un RUT para filtrar" id="buscador"> 
+				<button type="submit" id="" class="btn-three btn fuente-blanca btn-success"> Buscar </button> 
+				</input>
+			</form>
+		</div>
+		
+		
         <div >
 			<table class="table table-hover bg-light">
 			  <thead class="letra-blanca">
 				<tr>
+					<th scope="col">RUT: </th>
 					<th scope="col">Nombre: </th>
 					<th scope="col">Numero Tarjeta:</th>
 					<th scope="col">Patente:</th>
@@ -59,11 +72,13 @@
 					<th scope="col">Tipo documento:</th>
 					<th scope="col">Tipo Vehiculo:</th>
 					<th scope="col">Saldo:</th>
+					<th scope="col">Modificar</th>
 				</tr>
 			  </thead>
 			  <tbody>
 			   {% for tarjeta in tarjetas %}
 				<tr>
+					<td> {{ tarjeta.rut }}</td>
 					<td> {{ tarjeta.pri_nom }} {{ tarjeta.seg_nom }}  {{ tarjeta.pri_ap }} {{ tarjeta.seg_ap }}</td>
 					<td> {{ tarjeta.numero_tarjeta }}</td>
 					<td> {{ tarjeta.patente }}</td>
@@ -73,6 +88,7 @@
 					<td> {{ tarjeta.get_tipo_doc_display }}</td>
 					<td> {{ tarjeta.get_tipo_vehiculo_display }}</td>
 					<td> {{ tarjeta.saldo }}</td>
+					<td> <a class="btn btn-default" href="{% url 'editar_tarjeta' pk=tarjeta.pk %}"> <img src="{% static 'iconos\edit.png' %}"></a> </td>
 				</tr>
 				{% endfor %}
 			  </tbody>
@@ -139,16 +155,7 @@
               
     </div>
 	
-	<div class="footer-portal"> 
-                <p>Un sitio de  <img src="{% static 'imagenes\logo.png' %}" style="width: 130px;">  
-                <div class="circle-container">
-                  <div class="circle"></div>
-                </div></p>
-				<div class="circle-container">
-                  <div class="circle"></div>
-                </div> 2021 todos los derechos reservados.
-              </div>
-			  
+	
 {% endblock %}	
 </body>
     <!-- Core theme JS-->

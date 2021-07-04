@@ -13,5 +13,9 @@ urlpatterns = [
   path('seguros.html', views.seguros),
   path('sucursales.html', views.sucursales),
   path('portal/tarjetas.html', views.portalTarjetas),
-  path('portal/admin/listartarjeta.html', views.lista_tarjetas)
+  path('verTarjetas', views.lista_tarjetas),
+  path('portalGestion', views.portalGestion, name='portal_gestion'),
+  path('crearTarjetas', views.crearTarjetas),
+  path('tarjeta/<int:pk>/edit/', views.modificarTarjeta, name='editar_tarjeta'),
+  path('buscador', views.busqueda),
 ]
